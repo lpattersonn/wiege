@@ -6,6 +6,9 @@
 # ANTHROPIC_API_KEY (optional), CRON_SECRET (same value as the site).
 # Repository variable: WIEGE_SITE_URL (e.g. https://wiege.example), optional WIEGE_AI_MODEL.
 # GitHub pauses scheduled workflows after 60 days without repository activity.
+#
+# Optional: the Netlify scheduled function already refreshes news every 4 hours.
+# Until the DATABASE_URL secret is added, every run skips cleanly (no failures).
 name: Ingest news
 
 on:
@@ -27,16 +30,32 @@ jobs:
     env:
       WIEGE_SITE_URL: ${{ vars.WIEGE_SITE_URL }}
     steps:
+      - name: Check configuration
+        id: gate
+        env:
+          HAS_DATABASE_URL: ${{ secrets.DATABASE_URL != '' }}
+        run: |
+          if [ "$HAS_DATABASE_URL" = "true" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping: add the DATABASE_URL repository secret to enable this ingest (Netlify's scheduled function already refreshes news)."
+          fi
+
       - uses: actions/checkout@v5
+        if: steps.gate.outputs.enabled == 'true'
 
       - uses: actions/setup-node@v5
+        if: steps.gate.outputs.enabled == 'true'
         with:
           node-version: 24
           cache: npm
 
       - run: npm ci
+        if: steps.gate.outputs.enabled == 'true'
 
       - name: Ingest
+        if: steps.gate.outputs.enabled == 'true'
         run: npm run ingest
         env:
           NODE_ENV: production
@@ -45,7 +64,7 @@ jobs:
           WIEGE_AI_MODEL: ${{ vars.WIEGE_AI_MODEL }}
 
       - name: Refresh pages
-        if: ${{ env.WIEGE_SITE_URL != '' }}
+        if: steps.gate.outputs.enabled == 'true' && env.WIEGE_SITE_URL != ''
         env:
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: >-

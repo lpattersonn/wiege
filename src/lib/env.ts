@@ -108,11 +108,20 @@ export function isProduction(): boolean {
   return getEnv().NODE_ENV === 'production';
 }
 
-/** App connection string: `DATABASE_URL`, or the local embedded Postgres outside production. */
+/**
+ * App connection string: `DATABASE_URL`, or the local embedded Postgres on a
+ * developer machine. On a host or CI build (Netlify, Vercel, GitHub Actions)
+ * a missing URL is an error: falling back to localhost there only produces a
+ * confusing connection failure.
+ */
 export function databaseUrl(env: Env = getEnv()): string {
   if (env.DATABASE_URL) return env.DATABASE_URL;
-  if (env.NODE_ENV === 'production') {
-    throw new Error('DATABASE_URL is not set. Set it to the Supabase transaction pooler URL (port 6543).');
+  const hosted = isServerlessHost(env) || Boolean(process.env.CI);
+  if (env.NODE_ENV === 'production' || hosted) {
+    throw new Error(
+      'DATABASE_URL is not set. Set it to the Supabase transaction pooler URL (port 6543)' +
+        (hosted ? " in your host's environment variables (Netlify: Site configuration → Environment variables)." : '.'),
+    );
   }
   return LOCAL_DATABASE_URL;
 }
