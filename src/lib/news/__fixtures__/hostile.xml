@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Hostile feed</title>
+  <link>https://www.nintendolife.com</link>
+  <item>
+    <title>Phishing link to another site</title>
+    <link>https://evil.example.net/steal?next=nintendolife.com</link>
+    <description>This item points away from the feed's own site and must be skipped.</description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Script link</title>
+    <link>javascript:alert(document.cookie)</link>
+    <description>A link that runs code instead of opening a page must be skipped.</description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Lookalike host</title>
+    <link>https://nintendolife.com.evil.example.net/news</link>
+    <description>A host that only starts with the right name is still another site.</description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Credentials in the link</title>
+    <link>https://user:pass@www.nintendolife.com/news/creds</link>
+    <description>Links carrying credentials are refused even on the right host.</description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>From the far future</title>
+    <link>https://www.nintendolife.com/news/future</link>
+    <description>A publish date years ahead is a broken or hostile clock and is skipped.</description>
+    <pubDate>Thu, 01 Jan 2099 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>No date</title>
+    <link>https://www.nintendolife.com/news/no-date</link>
+    <description>Without a date the seven-day rule cannot be applied, so the item is skipped.</description>
+  </item>
+  <item>
+    <title>Short</title>
+    <link>https://www.nintendolife.com/news/short</link>
+    <description>Too short.</description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[<img src=x onerror=alert(1)>Mario Kart gets <b>new</b> tracks]]></title>
+    <link>https://www.nintendolife.com/news/mario-kart-tracks?utm_source=feed&amp;page=2&amp;adt_ei={{ subscriber.email_address }}#comments</link>
+    <description><![CDATA[<iframe src="https://evil.example.net"></iframe><p>Four new tracks arrive next week, including one set on a giant birthday cake with candles to dodge.</p>]]></description>
+    <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

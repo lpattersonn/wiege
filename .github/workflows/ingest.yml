@@ -1,0 +1,54 @@
+# Full news ingest every 4 hours (SPEC §5). Runs the CLI with no time limit,
+# which suits Claude lesson generation (tens of seconds per story), then asks
+# the site to refresh its pages.
+#
+# Repository secrets: DATABASE_URL (Supabase transaction pooler, port 6543),
+# ANTHROPIC_API_KEY (optional), CRON_SECRET (same value as the site).
+# Repository variable: WIEGE_SITE_URL (e.g. https://wiege.example), optional WIEGE_AI_MODEL.
+# GitHub pauses scheduled workflows after 60 days without repository activity.
+name: Ingest news
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ingest-news
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      WIEGE_SITE_URL: ${{ vars.WIEGE_SITE_URL }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Ingest
+        run: npm run ingest
+        env:
+          NODE_ENV: production
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          WIEGE_AI_MODEL: ${{ vars.WIEGE_AI_MODEL }}
+
+      - name: Refresh pages
+        if: ${{ env.WIEGE_SITE_URL != '' }}
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: >-
+          curl --fail-with-body --silent --show-error --max-time 60
+          -X POST "$WIEGE_SITE_URL/api/cron/ingest?revalidateOnly=1"
+          -H "Authorization: Bearer $CRON_SECRET"

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example Games News</title>
+  <link href="https://games.example.com/"/>
+  <updated>2026-09-27T09:00:00Z</updated>
+  <id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</id>
+  <entry>
+    <title type="html">Nintendo announces a new &lt;em&gt;Zelda&lt;/em&gt; puzzle game</title>
+    <link href="https://games.example.com/news/zelda-puzzle?ref=rss"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2026-09-27T08:00:00Z</updated>
+    <author><name>Alex Rivers</name></author>
+    <summary type="html">&lt;p&gt;The puzzle game lets players rearrange rooms of a castle to guide a sleepy knight home.&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <title>Relative links are resolved against the homepage</title>
+    <link href="/news/relative-link"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6b</id>
+    <updated>2026-09-26T08:00:00Z</updated>
+    <summary>A board game designer explains how she tested her card game with a group of friends every week.</summary>
+  </entry>
+</feed>

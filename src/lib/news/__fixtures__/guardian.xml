@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Books | Example</title>
+    <link>https://books.example.org/books</link>
+    <description>Latest books news</description>
+    <item>
+      <title>Library reopens with a new reading garden</title>
+      <link>https://books.example.org/books/2026/sep/26/library-reading-garden</link>
+      <description>&lt;p&gt;The town&amp;rsquo;s library has reopened after two years with a garden where children can read outdoors&amp;nbsp;in summer.&lt;/p&gt;&lt;p&gt;&lt;a href="https://books.example.org/books/2026/sep/26/library-reading-garden"&gt;Continue reading...&lt;/a&gt;&lt;/p&gt;</description>
+      <category domain="https://books.example.org/books/libraries">Libraries</category>
+      <category domain="https://books.example.org/books/childrens">Children's books</category>
+      <pubDate>Sat, 26 Sep 2026 08:00:00 GMT</pubDate>
+      <guid>https://books.example.org/books/2026/sep/26/library-reading-garden</guid>
+      <dc:creator>Sam Jones</dc:creator>
+    </item>
+  </channel>
+</rss>

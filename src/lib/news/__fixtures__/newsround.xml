@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title><![CDATA[BBC Newsround]]></title>
+        <description><![CDATA[BBC Newsround - Newsround - Homepage]]></description>
+        <link>https://www.bbc.co.uk/newsround</link>
+        <language>en-gb</language>
+        <item>
+            <title><![CDATA[Watch Newsround]]></title>
+            <description><![CDATA[All the latest news for children, in one short bulletin.]]></description>
+            <link>https://www.bbc.co.uk/newsround/news/watch_newsround?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/news/watch_newsround#0</guid>
+            <pubDate>Sun, 27 Sep 2026 07:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Teen author wins prize for her first novel about a lighthouse]]></title>
+            <description><![CDATA[Fourteen-year-old Amira wrote the book in her school library at lunchtimes, and it has now won a national award.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0author01o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0author01o#0</guid>
+            <pubDate>Sat, 26 Sep 2026 15:10:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lionesses name squad for autumn matches]]></title>
+            <description><![CDATA[England's women's football team have named three new players in their squad ahead of two friendly matches next month.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0sport002o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0sport002o#0</guid>
+            <pubDate>Sat, 26 Sep 2026 09:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Minecraft is getting its first new dimension in 14 years]]></title>
+            <description><![CDATA[The video game's makers say players will be able to explore a brand new world full of floating islands next year.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0games003o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0games003o#0</guid>
+            <pubDate>Fri, 25 Sep 2026 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Wildcats to be reintroduced to more areas of Scotland]]></title>
+            <description><![CDATA[Conservationists say the rare animals are thriving after being released into the Cairngorms two years ago.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0animal04o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0animal04o#0</guid>
+            <pubDate>Fri, 25 Sep 2026 11:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Seven-year-old's painting to hang in national gallery]]></title>
+            <description><![CDATA[Mia's picture of her grandmother's garden won a competition and will go on display alongside works by famous artists.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0artgal05o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0artgal05o#0</guid>
+            <pubDate>Thu, 24 Sep 2026 16:45:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Two teenagers arrested after stabbing near football ground]]></title>
+            <description><![CDATA[Police say two boys have been arrested after the attack outside the stadium on Saturday.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0unsafe6o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0unsafe6o#0</guid>
+            <pubDate>Thu, 24 Sep 2026 10:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Signed version: Watch Newsround]]></title>
+            <description><![CDATA[A signed version of Newsround is available every weekday for children who use British Sign Language.]]></description>
+            <link>https://www.bbc.co.uk/newsround/videos/c0video07o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/videos/c0video07o#0</guid>
+            <pubDate>Wed, 23 Sep 2026 10:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Poetry competition for young writers opens]]></title>
+            <description><![CDATA[Children across the UK are invited to send in a poem about the place where they live before the end of the year.]]></description>
+            <link>https://www.bbc.co.uk/newsround/articles/c0oldpoem8o?at_medium=RSS&amp;at_campaign=rss</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/newsround/articles/c0oldpoem8o#0</guid>
+            <pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Item with no link at all]]></title>
+            <description><![CDATA[This entry has no link or permalink guid, so there is nothing to attribute it to.]]></description>
+            <guid isPermaLink="false">no-link-9</guid>
+            <pubDate>Sat, 26 Sep 2026 10:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

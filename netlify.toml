@@ -1,0 +1,20 @@
+# Netlify deployment (SPEC §5, §12). Next.js runs on Netlify's OpenNext adapter,
+# which Netlify applies automatically; do not pin @netlify/plugin-nextjs.
+
+[build]
+  # `npm run build` also runs the `prebuild` hook (migrate + seed), which needs
+  # MIGRATION_DATABASE_URL / DATABASE_URL in the build environment.
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  # The build's `prebuild` step migrates, so server instances do not migrate on
+  # boot here by default. If you set WIEGE_AUTO_MIGRATE=1, instrumentation.ts
+  # reads the migrations from ./drizzle, which this makes available to functions.
+  included_files = ["drizzle/**"]
+
+# netlify/functions/ingest-schedule.mts triggers /api/cron/ingest every 4 hours.
+# Set CRON_SECRET (16+ characters) in the site's environment variables.
